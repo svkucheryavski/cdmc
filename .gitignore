@@ -1,0 +1,9 @@
+.Rproj.user
+.Rhistory
+.RData
+.Rapp.history
+.Rbuildignore
+.DS_Store
+.lintr
+.vscode/*
+
