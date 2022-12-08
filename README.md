@@ -50,7 +50,6 @@ X <- sapply(1:n, function(i) runif(N, xmin[i], xmax[i]))
 # Compute MAD and mimimal distance between any two mixtures in X
 cat("\nInitial X:\n")
 print(c(DXmax = getDmax(X, xmin, xmax), rXmin = min(dist(X))))
-cor(X)
 
 # Stage 2. Optimize X to get MAD smaller
 X <- getOptimizedX(X, xmin, xmax, critFun = function(d1, d2, r1, r2) (d1 > d2))
@@ -58,7 +57,6 @@ X <- getOptimizedX(X, xmin, xmax, critFun = function(d1, d2, r1, r2) (d1 > d2))
 # Compute MAD and mimimal distance between any two mixtures in the optimized X
 cat("\nAfter stage 2:\n")
 print(c(DXmax = getDmax(X, xmin, xmax), rXmin = min(dist(X))))
-cor(X)
 
 # Stage 3: Optimize X to get MAD smaller and minimal distance between two mixtures larger
 X <- getOptimizedX(X, xmin, xmax, critFun = function(d1, d2, r1, r2) (d1 > d2 || r1 < r2))

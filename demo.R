@@ -17,13 +17,11 @@ n <- length(xmin)
 X <- sapply(1:n, function(i) runif(N, xmin[i], xmax[i]))
 cat("\nInitial X:\n")
 print(c(DXmax = getDmax(X, xmin, xmax), rXmin = min(dist(X))))
-cor(X)
 
 # optimize X to get DXmax smaller
 X <- getOptimizedX(X, xmin, xmax, critFun = function(d1, d2, r1, r2) (d1 > d2))
 cat("\nAfter stage 2:\n")
 print(c(DXmax = getDmax(X, xmin, xmax), rXmin = min(dist(X))))
-cor(X)
 
 # optimize X to get DXmax smaller and rXmin larger
 X <- getOptimizedX(X, xmin, xmax, critFun = function(d1, d2, r1, r2) (d1 > d2 || r1 < r2))
