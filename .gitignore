@@ -7,3 +7,5 @@
 .lintr
 .vscode/*
 
+# under development
+newcdmc.R
