@@ -52,7 +52,7 @@ getDMQuality(dm1)
 You can also quantize concentration values to a given number of levels. The number can be set individual for each component or the same for all.
 
 
-The code below shows how to generate DM for the same number of mixtures and concentration limits, as in the example above, but the concentration values will be quantized so there are 11 levels for $C_1 \in \{0, 1, 2, ..., 10\}$, 10 levels for $C_2 \in \{10, 20, 30, ..., 100\}$, and 6 levels for $C_3 \in \{50, 100, 150, 200, 250, 300\}$.
+The code below shows how to generate DM for the same number of mixtures and concentration limits, as in the example above, but the concentration values will be quantized so there are 11 levels for $C_1 \in (0, 1, 2, ..., 10)$, 10 levels for $C_2 \in (10, 20, 30, ..., 100)$, and 6 levels for $C_3 \in (50, 100, 150, 200, 250, 300)$.
 
 ```r
 dm2 <- cdmc(30, xmin = c(0, 10, 50), xmax = c(10, 100, 300), nlevels = c(11, 10, 6))
